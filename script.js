@@ -1,13 +1,13 @@
 //Referencias
-const tabelaLancamentos = document.querySelector('table')
-const botaoAdicionar = document.querySelector('button')
-const inputData = document.querySelector('input[name=data]')
-const inputTitulo = document.querySelector('input[name=titulo]')
-const inputCategoria = document.querySelector('input[name=categoria]')
-const inputCindicativa = document.querySelector('input[name=cindicativa]')
+var tabelaLancamentos = document.querySelector('table')
+var botaoAdicionar = document.querySelector('button')
+var inputData = document.querySelector('input[name=data]')
+var inputTitulo = document.querySelector('input[name=titulo]')
+var inputCategoria = document.querySelector('input[name=categoria]')
+var inputCindicativa = document.querySelector('input[name=cindicativa]')
 
 
-tabelaLancamentos.addEventListener('dblclick', event => {
+tabelaLancamentos.addEventListener('dblclick', function(event){
     if(event.target.parentNode.tagName != 'TR'){
         alert('Clique dentro do campo para apagar a informação')
         return;
@@ -19,17 +19,17 @@ tabelaLancamentos.addEventListener('dblclick', event => {
 
 botaoAdicionar.addEventListener('click', function(){
     
-    const data = inputData.value
+    var data = inputData.value
 
-    let tr = document.createElement('tr')
-    let td = document.createElement('td')
+    var tr = document.createElement('tr')
+    var td = document.createElement('td')
 
     td.innerText = data
     tr.appendChild(td)
     tabelaLancamentos.appendChild(tr)
     inputData.value = ''
     
-    const titulo = inputTitulo.value
+    var titulo = inputTitulo.value
     
     td = document.createElement('td')
 
@@ -38,7 +38,7 @@ botaoAdicionar.addEventListener('click', function(){
     tabelaLancamentos.appendChild(tr)
     inputTitulo.value = ''
     
-    const categoria = inputCategoria.value
+    var categoria = inputCategoria.value
 
     td = document.createElement('td')
 
@@ -48,7 +48,7 @@ botaoAdicionar.addEventListener('click', function(){
     inputCategoria.value = ''
 
     
-    const cindicativa = inputCindicativa.value
+    var cindicativa = inputCindicativa.value
 
     td = document.createElement('td')    
 
